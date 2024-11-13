@@ -9,8 +9,264 @@
       href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="src/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
     <title>Critics at Large - Podcast</title>
+
+    <style>
+      body {
+        font-family: "Host Grotesk", sans-serif;
+        background-color: #f9c647;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        padding-top: 50px;
+        scroll-behavior: smooth;
+      }
+
+      header,
+      section {
+        padding: 20px;
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+        margin-top: 50px;
+        margin-bottom: 50px;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: "Libre Caslon Text", serif;
+        color: black;
+      }
+
+      h2 {
+        border-bottom: 1px solid black;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+      }
+
+      h2:hover,
+      h3:hover {
+        color: white;
+      }
+
+      nav {
+        position: fixed;
+        top: 0;
+        max-width: 800px;
+        background-color: #f9c647;
+        color: black;
+        padding-top: 8px;
+        padding-bottom: 6px;
+        z-index: 1000;
+        text-align: center;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+      }
+
+      nav .container {
+        max-width: 800px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+      }
+
+      nav a {
+        color: black;
+        text-decoration: none;
+      }
+
+      nav a:hover {
+        color: white;
+        transition: color 0.3s ease;
+      }
+
+      nav a,
+      .read-more {
+        position: relative;
+        text-decoration: none;
+        color: black;
+        transition: color 0.3s;
+      }
+
+      nav a::after,
+      .read-more::after {
+        content: "";
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: black;
+        transition: width 0.3s ease;
+      }
+
+      nav a:hover,
+      .read-more:hover {
+        color: #d98f00;
+      }
+
+      nav a:hover::after,
+      .read-more:hover::after {
+        width: 100%;
+      }
+
+      nav a:focus {
+        outline: 2px solid #000;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+      }
+
+      p {
+        margin-bottom: 20px;
+        line-height: 1.8;
+        text-align: justify;
+      }
+
+      header {
+        margin-bottom: 40px;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: #f9c647;
+        border-radius: 10px;
+      }
+
+      .title {
+        text-transform: uppercase;
+        letter-spacing: -1px;
+        font-weight: 400;
+      }
+
+      .btn-listen {
+        display: inline-block;
+        padding: 12px 25px;
+        background-color: black;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+      }
+
+      .btn-listen:hover {
+        background-color: white;
+        color: black;
+        border: 2px solid black;
+        transform: scale(1.08);
+        transition: transform 0.3s, background-color 0.3s, color 0.3s,
+          border 0.3s;
+      }
+
+      .host-profile p[onclick],
+      #backToTop {
+        cursor: pointer;
+        text-align: center;
+      }
+
+      .host-profile {
+        display: inline-block;
+        width: 45%;
+        margin: 20px;
+        text-align: center;
+      }
+
+      .host-profile p {
+        text-align: center;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height 0.3s ease, opacity 0.3s ease;
+      }
+
+      .host-profile p.show {
+        max-height: 100px;
+        opacity: 1;
+        transition: max-height 0.3s ease, opacity 0.3s ease;
+      }
+
+      .host-profile img {
+        width: 100%;
+        width: 200px;
+        height: 200px;
+        border-radius: 4px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+      }
+
+      .arrow {
+        display: inline-block;
+        transition: transform 0.3s ease;
+      }
+
+      .arrow.expanded {
+        transform: rotate(180deg);
+      }
+
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+
+      .episode-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 300px;
+        margin: 15px auto;
+        background-color: white;
+        border-radius: 4px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        text-align: left;
+      }
+
+      .episode-card img {
+        width: 100%;
+        height: auto;
+        border-radius: 4px;
+        margin-bottom: 10px;
+      }
+
+      .episode-card h3 {
+        font-family: "Libre Caslon Text", serif;
+        color: black;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+
+      .episode-card p {
+        font-family: "Host Grotesk", sans-serif;
+        color: black;
+        font-size: 14;
+      }
+
+      #backToTop {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #f9c647;
+        color: black;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        font-size: 14px;
+        cursor: pointer;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      #backToTop:hover {
+        background-color: black;
+        color: #f9c647;
+        transform: scale(1.08);
+        transition: transform 0.3s, background-color 0.3s, color 0.3s,
+          border 0.3s;
+      }
+    </style>
   </head>
   <body>
     <nav class="title">
@@ -28,7 +284,10 @@
       </header>
 
       <section id="about">
-        <h2 class="title">About the Podcast</h2>
+        <h2 class="title">
+          About the Podcast
+          <span class="material-symbols-outlined">podcasts</span>
+        </h2>
         <p>
           "Critics at Large" is a weekly culture podcast from The New Yorker
           that dives into today's cultural obsessions, classic works viewed
@@ -56,15 +315,19 @@
       </section>
 
       <section id="hosts">
-        <h2 class="title">Meet the Hosts</h2>
+        <h2 class="title">
+          Meet the Hosts <span class="material-symbols-outlined"> mic </span>
+        </h2>
 
         <div class="host-profile">
           <img
             src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/150/248/original/cunningham-vinson.png?1731522179"
             alt="Vinson Cunningham"
           />
-          <h3 class="title">Vinson Cunningham</h3>
-          <p onclick="toggleBio('bioVinson')">Read more...</p>
+          <h3 class="title" onclick="toggleBio('bioVinson', this)">
+            Vinson Cunningham
+            <span class="material-symbols-outlined arrow">arrow_drop_down</span>
+          </h3>
           <p id="bioVinson">
             Vinson Cunningham is a staff writer at The New Yorker...
           </p>
@@ -75,8 +338,10 @@
             src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/150/247/original/naomi-fry-avitar.png?1731522129"
             alt="Naomi Fry"
           />
-          <h3 class="title">Naomi Fry</h3>
-          <p onclick="toggleBio('bioNaomi')">Read more...</p>
+          <h3 class="title" onclick="toggleBio('bioNaomi', this)">
+            Naomi Fry
+            <span class="material-symbols-outlined arrow">arrow_drop_down</span>
+          </h3>
           <p id="bioNaomi">Naomi Fry is a staff writer at The New Yorker...</p>
         </div>
 
@@ -85,8 +350,10 @@
             src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/150/249/original/schwartz-alexandra.png?1731522280"
             alt="Alexandra Schwartz"
           />
-          <h3 class="title">Alexandra Schwartz</h3>
-          <p onclick="toggleBio('bioAlexandra')">Read more...</p>
+          <h3 class="title" onclick="toggleBio('bioAlexandra', this)">
+            Alexandra Schwartz
+            <span class="material-symbols-outlined arrow">arrow_drop_down</span>
+          </h3>
           <p id="bioAlexandra">
             Alexandra Schwartz is a staff writer at The New Yorker...
           </p>
@@ -94,8 +361,24 @@
       </section>
 
       <section id="episodes">
-        <h2 class="title">Episodes Highlights</h2>
-        <p>...</p>
+        <h2 class="title">
+          Episodes Highlights
+          <span class="material-symbols-outlined"> mic </span>
+        </h2>
+        <div class="episode-card">
+          <img
+            src="https://media.newyorker.com/photos/6516930907084e4e24f0b0cf/1:1/w_1600,c_limit/CAL-TILE.png"
+            alt="The Substance"
+          />
+          <h3 class="title">The Substance</h3>
+          <p>
+            The critics discuss Coralie Fargeat's film theme whereas delving
+            into society's obsession with physical form. “We are embodied. It is
+            a struggle. It is beautiful. It's something to wrestle with forever.
+            Just as you think that you've caught up to your current embodiment,
+            something changes,” Schwartz says.
+          </p>
+        </div>
       </section>
 
       <section id="listen">
@@ -103,11 +386,36 @@
           href="https://www.newyorker.com/podcast/critics-at-large"
           target="_blank"
           class="btn-listen"
-          >Listen Now</a
-        >
+          >Listen Now <span class="material-symbols-outlined">headphones</span>
+        </a>
       </section>
-      <button id="backToTop">Back to Top</button>
+
+      <button id="backToTop">
+        Back to Top <span class="material-symbols-outlined">arrow_upward</span>
+      </button>
     </div>
-    <script src="src/index.js"></script>
+
+    <script>
+      function toggleBio(bioId, toggleElement) {
+        const bio = document.getElementById(bioId);
+        const arrow = toggleElement.querySelector(".arrow");
+
+        bio.classList.toggle("show");
+        arrow.classList.toggle("expanded");
+      }
+
+      window.onscroll = function () {
+        const backToTopButton = document.getElementById("backToTop");
+        if (document.documentElement.scrollTop > 300) {
+          backToTopButton.style.display = "block";
+        } else {
+          backToTopButton.style.display = "none";
+        }
+      };
+
+      document.getElementById("backToTop").onclick = function () {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      };
+    </script>
   </body>
 </html>
