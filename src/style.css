@@ -1,9 +1,9 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Host Grotesk", sans-serif;
+  background-color: black;
   line-height: 1.6;
   margin: 0;
   padding: 0;
-  background-color: #f5f5f5;
   scroll-behavior: smooth;
 }
 
@@ -23,16 +23,17 @@ h3 {
 
 h2:hover,
 h3:hover {
-  color: #ff007b;
+  color: white;
 }
 
 nav {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: #333;
+  background-color: black;
   color: #fff;
   text-align: center;
+  align-items: center;
   padding: 10px 0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   z-index: 1000;
@@ -46,13 +47,20 @@ nav a {
 }
 
 nav a:hover {
-  color: #ff007b;
+  color: white;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+  background-color: #f9c647;
 }
 
 .btn-listen {
   display: inline-block;
   padding: 12px 25px;
-  background-color: #333;
+  background-color: black;
   color: #fff;
   text-decoration: none;
   border-radius: 5px;
@@ -60,7 +68,7 @@ nav a:hover {
 }
 
 .btn-listen:hover {
-  background-color: #ff007b;
+  background-color: white;
 }
 
 .host-profile {
@@ -71,8 +79,8 @@ nav a:hover {
 }
 
 .host-profile img {
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
