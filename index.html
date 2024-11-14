@@ -26,12 +26,19 @@
         scroll-behavior: smooth;
       }
 
+      html,
+      body {
+        overflow-x: hidden;
+        width: 100%;
+      }
+
       h1,
       h2,
       h3 {
         font-family: "Libre Caslon Text", serif;
         color: black;
         margin: 0;
+        letter-spacing: -1.2px;
       }
 
       section,
@@ -80,6 +87,7 @@
         color: black;
         padding: 8px 0;
         z-index: 1000;
+        letter-spacing: -0.8px;
       }
 
       nav .container {
@@ -126,8 +134,11 @@
 
       p {
         margin-bottom: 20px;
-        line-height: 1.8;
         text-align: justify;
+      }
+
+      .spacer {
+        line-height: 1.8;
       }
 
       .container {
@@ -323,6 +334,23 @@
         transform: scale(1.08);
       }
 
+      #menu {
+        display: flex;
+        gap: 15px;
+      }
+
+      #about p {
+        line-height: 1.8;
+      }
+
+      #menu-toggle {
+        display: none;
+        font-size: 2rem;
+        background: none;
+        border: none;
+        cursor: pointer;
+      }
+
       @media (max-width: 768px) {
         body {
           padding-top: 30px;
@@ -352,6 +380,32 @@
           font-size: 14px;
           text-align: justify;
           margin-bottom: 15px;
+        }
+
+        .left-image {
+          position: static;
+          transform: none;
+          width: 40%;
+          margin: 20px auto;
+          display: block;
+        }
+
+        #menu-toggle {
+          display: block;
+        }
+
+        #menu {
+          display: none;
+          flex-direction: column;
+          gap: 10px;
+          background-color: #f9c647;
+          width: 100%;
+          padding: 10px 0;
+          text-align: center;
+        }
+
+        #menu.active {
+          display: flex;
         }
 
         .host-profile img {
@@ -410,6 +464,7 @@
   <body>
     <nav class="nav-title">
       <div class="container">
+        <button id="menu-toggle" aria-label="Toggle menu">☰</button>
         <a href="#about">ABOUT THE PODCAST</a>
         <a href="#hosts">MEET THE HOSTS</a>
         <a href="#episodes">EPISODE HIGHLIGHTS</a>
@@ -734,6 +789,13 @@
       document.getElementById("backToTop").onclick = function () {
         window.scrollTo({ top: 0, behavior: "smooth" });
       };
+
+      document
+        .getElementById("menu-toggle")
+        .addEventListener("click", function () {
+          const menu = document.getElementById("menu");
+          menu.classList.toggle("active");
+        });
     </script>
   </body>
 </html>
