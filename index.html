@@ -30,16 +30,12 @@
       section {
         padding: 20px;
         max-width: 800px;
-        margin: 0 auto;
+        margin: 50px auto;
         text-align: center;
-        margin-top: 50px;
-        margin-bottom: 50px;
       }
 
       header img {
         margin-top: 10px;
-        margin-bottom: 0;
-        padding-top: 0;
       }
 
       h1,
@@ -57,7 +53,7 @@
 
       h2:hover,
       h3:hover {
-        color: white;
+        color: #d98f00;
       }
 
       nav {
@@ -66,11 +62,9 @@
         max-width: 800px;
         background-color: #f9c647;
         color: black;
-        padding-top: 8px;
-        padding-bottom: 6px;
+        padding: 8px 0;
         z-index: 1000;
         text-align: center;
-        margin: 0 auto;
         left: 0;
         right: 0;
       }
@@ -86,23 +80,15 @@
       nav a {
         color: black;
         text-decoration: none;
-      }
-
-      nav a:hover {
-        color: white;
-        transition: color 0.3s ease;
-      }
-
-      nav a,
-      .read-more {
         position: relative;
-        text-decoration: none;
-        color: black;
         transition: color 0.3s;
       }
 
-      nav a::after,
-      .read-more::after {
+      nav a:hover {
+        color: #d98f00;
+      }
+
+      nav a::after {
         content: "";
         position: absolute;
         bottom: -3px;
@@ -113,13 +99,7 @@
         transition: width 0.3s ease;
       }
 
-      nav a:hover,
-      .read-more:hover {
-        color: #d98f00;
-      }
-
-      nav a:hover::after,
-      .read-more:hover::after {
+      nav a:hover::after {
         width: 100%;
       }
 
@@ -132,10 +112,6 @@
         margin-bottom: 20px;
         line-height: 1.8;
         text-align: justify;
-      }
-
-      header {
-        margin-bottom: 40px;
       }
 
       .container {
@@ -158,7 +134,8 @@
         color: #fff;
         text-decoration: none;
         border-radius: 5px;
-        transition: background-color 0.3s;
+        transition: background-color 0.3s, transform 0.3s, color 0.3s,
+          border 0.3s;
       }
 
       .btn-listen:hover {
@@ -166,25 +143,17 @@
         color: black;
         border: 2px solid black;
         transform: scale(1.08);
-        transition: transform 0.3s, background-color 0.3s, color 0.3s,
-          border 0.3s;
-      }
-
-      .host-profile p[onclick],
-      #backToTop {
-        cursor: pointer;
-        text-align: center;
       }
 
       .host-profile {
         display: inline-block;
-        width: 45%;
+        width: 100%;
+        max-width: 800px;
         margin: 20px;
         text-align: center;
       }
 
       .host-profile p {
-        text-align: center;
         max-height: 0;
         overflow: hidden;
         opacity: 0;
@@ -192,26 +161,15 @@
       }
 
       .host-profile p.show {
-        max-height: 100px;
+        max-height: 1000px;
         opacity: 1;
-        transition: max-height 0.3s ease, opacity 0.3s ease;
       }
 
       .host-profile img {
-        width: 100%;
         width: 200px;
         height: 200px;
         border-radius: 4px;
-        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-      }
-
-      .arrow {
-        display: inline-block;
-        transition: transform 0.3s ease;
-      }
-
-      .arrow.expanded {
-        transform: rotate(180deg);
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 12px;
       }
 
       .material-symbols-outlined {
@@ -241,14 +199,13 @@
       .episode-card h3 {
         font-family: "Libre Caslon Text", serif;
         color: black;
-        margin-top: 10px;
-        margin-bottom: 10px;
+        margin: 10px 0;
       }
 
       .episode-card p {
         font-family: "Host Grotesk", sans-serif;
         color: black;
-        font-size: 14;
+        font-size: 14px;
       }
 
       #backToTop {
@@ -263,14 +220,14 @@
         font-size: 14px;
         cursor: pointer;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s, background-color 0.3s, color 0.3s,
+          border 0.3s;
       }
 
       #backToTop:hover {
         background-color: black;
         color: #f9c647;
         transform: scale(1.08);
-        transition: transform 0.3s, background-color 0.3s, color 0.3s,
-          border 0.3s;
       }
     </style>
   </head>
@@ -279,7 +236,7 @@
       <div class="container">
         <a href="#about">About the Podcast</a>
         <a href="#hosts">Meet the Hosts</a>
-        <a href="#episodes">Episodes Highlights</a>
+        <a href="#episodes">Episode Highlights</a>
         <a href="#listen">Listen Now</a>
       </div>
     </nav>
@@ -299,28 +256,33 @@
           <span class="material-symbols-outlined">podcasts</span>
         </h2>
         <p>
-          "Critics at Large" is a weekly culture podcast from The New Yorker
-          that dives into today's cultural obsessions, classic works viewed
-          through a fresh lens, and the latest trends shaping books, television,
-          film, and more. Every Thursday, staff writers Vinson Cunningham, Naomi
-          Fry, and Alexandra Schwartz lead lively, thought-provoking discussions
-          that blend deep analysis with behind-the-scenes insights from The New
-          Yorker's world-renowned reporting. Together, they help listeners make
-          sense of our cultural moment—and how we got here.
+          Critics at Large is The New Yorker's weekly culture podcast, delving
+          into today's cultural fascinations, classic works seen with fresh
+          eyes, and the trends shaping books, television, film, and more. But
+          for me, this podcast is more than a source of compelling insights—it
+          feels as if someone has captured my own aspirations and crafted them
+          into this remarkable series.
         </p>
         <p>
-          I've always felt we could learn more about ourselves by looking into
-          art and culture. Maybe that's why I've always been so passionate about
-          these subjects, even in my early days of journalism. From the moment I
-          discovered The New Yorker, I dreamed of becoming a cultural critic,
-          exploring the nuances of art, literature, and human behavior. Over
-          time, my career and studies evolved, but my passion for these themes
-          only deepened. This podcast feels like someone took my thoughts and
-          crafted them into a brilliant series. Each episode resonates with my
-          love for critical analysis and thoughtful conversation, guiding me
-          through cultural trends, profound discussions, and fresh perspectives.
-          Critics at Large is truly a blend of everything I value and aspire to
-          in the world of culture and storytelling."
+          Every Thursday, staff writers Vinson Cunningham, Naomi Fry, and
+          Alexandra Schwartz lead discussions that combine deep analysis with
+          insider perspectives, helping listeners make sense of our cultural
+          moment and the journeys that brought us here. It's an exhilarating
+          experience to follow along with them!
+        </p>
+        <p>
+          Since discovering The New Yorker, I've dreamed of becoming a cultural
+          critic, diving into the layers of art, literature, and society. As my
+          career and studies evolved, my passion for these themes only deepened.
+          That's why Critics at Large resonates so strongly with me; it mirrors
+          my love for thoughtful conversation and guides me through cultural
+          currents and profound discussions.
+        </p>
+        <p>
+          This podcast truly embodies everything I value and aspire to in
+          culture and storytelling—an ongoing journey into understanding the
+          world. I'd recommend it to anyone with a curious and insatiable soul
+          like mine.
         </p>
       </section>
 
@@ -334,22 +296,21 @@
             src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/150/248/original/cunningham-vinson.png?1731522179"
             alt="Vinson Cunningham"
           />
-          <h3 class="title" onclick="toggleBio('bioVinson', this)">
+          <h3 class="title">
             Vinson Cunningham
             <span class="material-symbols-outlined arrow">arrow_drop_down</span>
           </h3>
           <p id="bioVinson">
-            Vinson Cunningham joined The New Yorker as a staff writer in 2016.
-            Since 2018, he has served as a critic for the magazine, writing
-            about theatre, television, and more. He was a finalist for the
-            Pulitzer Prize for criticism in 2024, and was awarded the George
-            Jean Nathan Award for Dramatic Criticism for 2021-2022. And, in
-            2020, he was a finalist for a National Magazine Award for his
-            Profile of the comedian Tracy Morgan. He teaches at the Yale School
-            of Art and Columbia University's School of the Arts, and is a
-            co-host of Critics at Large, The New Yorker's weekly podcast about
-            culture and the arts. His début novel, “Great Expectations,” came
-            out in 2024.
+            Vinson Cunningham has been a staff writer at The New Yorker since
+            2016 and became a critic for the magazine in 2018, covering theater,
+            television, and broader cultural topics. A celebrated writer, he was
+            a Pulitzer Prize finalist for criticism in 2024 and received the
+            George Jean Nathan Award for Dramatic Criticism for 2021-2022. His
+            work also earned him a National Magazine Award finalist nomination
+            in 2020 for his profile of comedian Tracy Morgan. Cunningham teaches
+            at both the Yale School of Art and Columbia University's School of
+            the Arts. His début novel, Great Expectations, was published in
+            2024.
           </p>
         </div>
 
@@ -358,19 +319,20 @@
             src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/150/247/original/naomi-fry-avitar.png?1731522129"
             alt="Naomi Fry"
           />
-          <h3 class="title" onclick="toggleBio('bioNaomi', this)">
+          <h3 class="title">
             Naomi Fry
             <span class="material-symbols-outlined arrow">arrow_drop_down</span>
           </h3>
           <p id="bioNaomi">
-            Naomi Fry, a staff writer at The New Yorker since 2018, is a regular
-            contributor to the weekly column Critic's Notebook. Her writing on
-            popular culture, books, and art has appeared in the Times Book
-            Review, the Times Magazine, Artforum, and n+1, among other
-            publications. She attended Tel Aviv University, holds a master's
-            degree in English from Johns Hopkins University, and has taught at
-            New York University and the Rhode Island School of Design. She grew
-            up in Israel, and now lives in Brooklyn.
+            Naomi Fry has been a staff writer at The New Yorker since 2018 and
+            is a frequent contributor to the weekly Critic's Notebook column.
+            Her writing, which often explores themes in popular culture,
+            literature, and art, has also been featured in The New York Times
+            Book Review, The New York Times Magazine, Artforum, and n+1, among
+            other publications. Fry holds a master's degree in English from
+            Johns Hopkins University and has taught at New York University and
+            the Rhode Island School of Design. Originally from Israel, she now
+            resides in Brooklyn.
           </p>
         </div>
 
@@ -379,31 +341,60 @@
             src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/150/249/original/schwartz-alexandra.png?1731522280"
             alt="Alexandra Schwartz"
           />
-          <h3 class="title" onclick="toggleBio('bioAlexandra', this)">
+          <h3 class="title">
             Alexandra Schwartz
             <span class="material-symbols-outlined arrow">arrow_drop_down</span>
           </h3>
           <p id="bioAlexandra">
-            Alexandra Schwartz joined The New Yorker as a member of the
-            editorial staff in 2013 and has been a staff writer since 2016. She
-            has written extensively about literature as both a critic and a
-            reporter, profiling writers such as Jennifer Egan, Miriam Toews,
-            Vivian Gornick, and Ayad Akhtar. In 2014, she was awarded the
-            National Book Critics Circle's Nona Balakian Citation for Excellence
-            in Reviewing. Schwartz, who has written frequently on France,
-            covered the November, 2015, terror attacks in Paris. She has also
-            written pieces about New York City's newest neighborhood, the
-            pitfalls of self-help, and the world's largest coöperative grocery
-            store.
+            Alexandra Schwartz joined The New Yorker as part of the editorial
+            team in 2013 and became a staff writer in 2016. Known for her
+            insightful and compelling coverage, she has profiled celebrated
+            authors like Jennifer Egan, Miriam Toews, Vivian Gornick, and Ayad
+            Akhtar. In 2014, Schwartz received the National Book Critics
+            Circle's Nona Balakian Citation for Excellence in Reviewing. Her
+            work spans a variety of subjects, including in-depth reporting on
+            literature, the nuances of French culture (including her coverage of
+            the Paris terror attacks in November 2015), and explorations of New
+            York City's latest developments.
           </p>
         </div>
       </section>
 
       <section id="episodes">
         <h2 class="title">
-          Episodes Highlights
-          <span class="material-symbols-outlined"> mic </span>
+          Episode Highlights
+          <span class="material-symbols-outlined"> highlight </span>
         </h2>
+        <div class="episode-card">
+          <img
+            src="https://media.newyorker.com/photos/6516930907084e4e24f0b0cf/1:1/w_1600,c_limit/CAL-TILE2.png"
+            alt="Episode Two"
+          />
+          <h3 class="title">Midlife Crisis</h3>
+          <p>
+            The critics examine how the midlife crisis, once largely seen as a
+            male experience, has evolved with societal shifts since the women's
+            rights movement, leading to a new archetype. The hosts discuss how
+            novels like Miranda July's All Four have redefined the genre for the
+            modern age. “I think the crisis of midlife,” Schwartz notes, “is
+            just the crisis of life, period. You invent it for yourself.”
+          </p>
+        </div>
+        <div class="episode-card">
+          <img
+            src="https://media.newyorker.com/photos/6516930907084e4e24f0b0cf/1:1/w_1600,c_limit/CAL-TILE3.png"
+            alt="Episode Three"
+          />
+          <h3 class="title">The Therapy</h3>
+          <p>
+            In this episode, the critics explore portrayals of therapy, from
+            Woody Allen's works and The Sopranos to newer representations in
+            Shrinking and Couples Therapy. They discuss how mental-health
+            awareness has grown, with the rise of therapists on social media
+            putting psychoanalytic language and concepts into the hands of a
+            broader audience. But is the therapy boom making us better?
+          </p>
+        </div>
         <div class="episode-card">
           <img
             src="https://media.newyorker.com/photos/6516930907084e4e24f0b0cf/1:1/w_1600,c_limit/CAL-TILE.png"
@@ -427,21 +418,29 @@
           class="btn-listen"
           >Listen Now <span class="material-symbols-outlined">headphones</span>
         </a>
+        <button id="backToTop" style="display: none">
+          Back to Top
+          <span class="material-symbols-outlined">arrow_upward</span>
+        </button>
       </section>
-
-      <button id="backToTop">
-        Back to Top <span class="material-symbols-outlined">arrow_upward</span>
-      </button>
     </div>
 
     <script>
-      function toggleBio(bioId, toggleElement) {
+      function toggleBio(bioId) {
         const bio = document.getElementById(bioId);
-        const arrow = toggleElement.querySelector(".arrow");
-
         bio.classList.toggle("show");
-        arrow.classList.toggle("expanded");
       }
+
+      document
+        .querySelectorAll(".host-profile img, .host-profile h3")
+        .forEach((element) => {
+          element.addEventListener("click", function () {
+            const bioId = this.parentElement
+              .querySelector("p")
+              .getAttribute("id");
+            toggleBio(bioId);
+          });
+        });
 
       window.onscroll = function () {
         const backToTopButton = document.getElementById("backToTop");
