@@ -42,17 +42,10 @@
         text-align: center;
       }
 
-      header img {
-        margin-top: 10px;
-      }
-
-      h1 {
-        margin-bottom: 10px;
-      }
-
       h2 {
         max-width: 800px;
         margin: 0 auto;
+        margin-top: 50px;
         padding: 10px 0;
         text-align: center;
         font-weight: normal;
@@ -70,7 +63,7 @@
         padding-top: 15px;
         padding-bottom: 40px;
         text-align: center;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
       }
 
       section.no-border,
@@ -152,6 +145,23 @@
         padding-bottom: 10px;
       }
 
+      .wrapper {
+        margin-top: 40px;
+      }
+
+      .left-image {
+        position: absolute;
+        left: 0;
+        bottom: 20%;
+        transform: translateY(-325%) translateX(90%);
+      }
+
+      .page-title {
+        margin: 0;
+        font-size: 1.8rem;
+        text-align: center;
+      }
+
       .btn-listen {
         display: inline-flex;
         align-items: center;
@@ -226,11 +236,11 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        max-width: 300px;
+        max-width: 100px;
         margin: 15px auto;
         background-color: #fff;
         border-radius: 4px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        box-shadow: rgba(0, 0, 0, 0.5) 0px 4px 12px;
         padding: 20px;
         text-align: left;
       }
@@ -266,12 +276,6 @@
         gap: 20px;
         justify-items: center;
         padding-top: 20px;
-      }
-
-      #episodes {
-        display: block;
-        padding-top: 20px;
-        text-align: center;
       }
 
       #hosts .section-title {
@@ -385,6 +389,7 @@
           flex-wrap: wrap;
           justify-content: center;
         }
+
         #hosts {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
@@ -414,12 +419,19 @@
 
     <div class="container">
       <header id="top">
-        <h1 class="page-title">CRITICS AT LARGE</h1>
         <img
-          src="https://www.newyorker.com/verso/static/the-new-yorker/assets/logo-header.svg"
-          alt="New Yorker logo"
-          width="150"
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/150/386/original/the-new-yorker-subscription-business-model-magazine-newsletter-fiction-png-favpng-1hzegr8eBm9vU0358UYp7GUgZ-removebg-preview.png?1731617446"
+          alt="New Yorker icon"
+          class="left-image"
+          width="20%"
         />
+        <div class="wrapper">
+          <h1 class="page-title">CRITICS AT LARGE</h1>
+          <img
+            src="https://www.newyorker.com/verso/static/the-new-yorker/assets/logo-header.svg"
+            alt="New Yorker logo"
+          />
+        </div>
       </header>
 
       <section id="about">
