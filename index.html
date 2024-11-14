@@ -18,24 +18,12 @@
     <style>
       body {
         font-family: "Host Grotesk", sans-serif;
+        font-weight: 400;
         background-color: #f9c647;
-        line-height: 1.6;
         margin: 0;
         padding: 0;
         padding-top: 50px;
         scroll-behavior: smooth;
-      }
-
-      header,
-      section {
-        padding: 20px;
-        max-width: 800px;
-        margin: 50px auto;
-        text-align: center;
-      }
-
-      header img {
-        margin-top: 10px;
       }
 
       h1,
@@ -43,12 +31,31 @@
       h3 {
         font-family: "Libre Caslon Text", serif;
         color: black;
+        margin: 0;
+      }
+
+      section,
+      header {
+        padding: 20px;
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      header img {
+        margin-top: 10px;
+      }
+
+      h1 {
+        margin-bottom: 10px;
       }
 
       h2 {
-        border-bottom: 1px solid black;
-        padding-bottom: 10px;
-        margin-bottom: 20px;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 10px 0;
+        text-align: center;
+        font-weight: normal;
       }
 
       h2:hover,
@@ -56,32 +63,48 @@
         color: #d98f00;
       }
 
+      section {
+        display: block;
+        position: relative;
+        text-align: center;
+        padding-top: 15px;
+        padding-bottom: 40px;
+        text-align: center;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+      }
+
+      section.no-border,
+      section:last-child {
+        border-bottom: none;
+      }
+
       nav {
         position: fixed;
         top: 0;
-        max-width: 800px;
+        left: 0;
+        right: 0;
         background-color: #f9c647;
         color: black;
         padding: 8px 0;
         z-index: 1000;
-        text-align: center;
-        left: 0;
-        right: 0;
       }
 
       nav .container {
         max-width: 800px;
         margin: 0 auto;
         display: flex;
-        justify-content: center;
+        justify-content: space-evenly;
         gap: 15px;
       }
 
       nav a {
         color: black;
         text-decoration: none;
-        position: relative;
+        font-family: "Host Grotesk", sans-serif;
+        font-size: 1rem;
         transition: color 0.3s;
+        position: relative;
+        outline: none;
       }
 
       nav a:hover {
@@ -121,19 +144,23 @@
         border-radius: 10px;
       }
 
-      .title {
-        text-transform: uppercase;
-        letter-spacing: -1px;
-        font-weight: 400;
+      .section-title {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin: 0 auto;
+        padding-bottom: 10px;
       }
 
       .btn-listen {
-        display: inline-block;
+        display: inline-flex;
+        align-items: center;
         padding: 12px 25px;
         background-color: black;
         color: #fff;
         text-decoration: none;
         border-radius: 5px;
+        line-height: 1.2;
         transition: background-color 0.3s, transform 0.3s, color 0.3s,
           border 0.3s;
       }
@@ -145,12 +172,27 @@
         transform: scale(1.08);
       }
 
+      .btn-listen span {
+        margin-left: 8px;
+        vertical-align: middle;
+      }
+
       .host-profile {
-        display: inline-block;
-        width: 100%;
-        max-width: 800px;
-        margin: 20px;
+        max-width: 200px;
         text-align: center;
+        margin: 15px;
+        cursor: pointer;
+      }
+
+      .first-name {
+        display: block;
+        font-weight: normal;
+      }
+
+      .last-name {
+        display: block;
+        font-weight: bold;
+        margin-top: 4px;
       }
 
       .host-profile p {
@@ -170,10 +212,14 @@
         height: 200px;
         border-radius: 4px;
         box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 12px;
+        cursor: pointer;
       }
 
-      .material-symbols-outlined {
-        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      .material-symbols-outlined.arrow {
+        font-size: 1rem;
+        vertical-align: middle;
+        margin-left: 5px;
+        cursor: pointer;
       }
 
       .episode-card {
@@ -182,7 +228,7 @@
         align-items: center;
         max-width: 300px;
         margin: 15px auto;
-        background-color: white;
+        background-color: #fff;
         border-radius: 4px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         padding: 20px;
@@ -202,13 +248,47 @@
         margin: 10px 0;
       }
 
-      .episode-card p {
-        font-family: "Host Grotesk", sans-serif;
+      .episode-card h3 a {
+        text-decoration: none;
         color: black;
-        font-size: 14px;
+      }
+
+      #episodes {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        justify-items: center;
+      }
+
+      #hosts {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        justify-items: center;
+        padding-top: 20px;
+      }
+
+      #episodes {
+        display: block;
+        padding-top: 20px;
+        text-align: center;
+      }
+
+      #hosts .section-title {
+        grid-column: span 3;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+
+      #hosts .host-profile {
+        display: inline-block;
+        width: 200px;
+        margin: 15px;
+        text-align: center;
       }
 
       #backToTop {
+        display: none;
         position: fixed;
         bottom: 20px;
         right: 20px;
@@ -220,8 +300,17 @@
         font-size: 14px;
         cursor: pointer;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        line-height: 1.2;
         transition: transform 0.3s, background-color 0.3s, color 0.3s,
           border 0.3s;
+      }
+
+      #backToTop.show {
+        display: block;
+      }
+
+      #backToTop span {
+        vertical-align: middle;
       }
 
       #backToTop:hover {
@@ -229,30 +318,113 @@
         color: #f9c647;
         transform: scale(1.08);
       }
+
+      @media (max-width: 768px) {
+        body {
+          padding-top: 30px;
+        }
+
+        header,
+        section {
+          padding: 10px;
+          margin: 20px auto;
+        }
+
+        nav .container {
+          flex-direction: column;
+          gap: 10px;
+          align-items: center;
+        }
+
+        h1 {
+          font-size: 1.8rem;
+        }
+
+        h2 {
+          font-size: 1.5rem;
+        }
+
+        p {
+          font-size: 14px;
+          text-align: justify;
+          margin-bottom: 15px;
+        }
+
+        .host-profile img {
+          width: 100%;
+          height: auto;
+        }
+
+        .episode-card {
+          max-width: 100%;
+          margin: 15px 0;
+        }
+      }
+
+      #hosts {
+        grid-template-columns: 1fr;
+      }
+
+      #episodes {
+        grid-template-columns: 1fr;
+      }
+
+      .host-profile {
+        width: 100%;
+        margin: 15px 0;
+      }
+
+      @media (min-width: 769px) {
+        .episode-card {
+          max-width: 300px;
+          margin: 15px;
+        }
+
+        #episodes {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+        #hosts {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 20px;
+        }
+
+        .host-profile {
+          width: 100%;
+        }
+
+        #hosts {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
     </style>
   </head>
+
   <body>
-    <nav class="title">
+    <nav class="nav-title">
       <div class="container">
-        <a href="#about">About the Podcast</a>
-        <a href="#hosts">Meet the Hosts</a>
-        <a href="#episodes">Episode Highlights</a>
-        <a href="#listen">Listen Now</a>
+        <a href="#about">ABOUT THE PODCAST</a>
+        <a href="#hosts">MEET THE HOSTS</a>
+        <a href="#episodes">EPISODE HIGHLIGHTS</a>
+        <a href="#listen">LISTEN NOW</a>
       </div>
     </nav>
 
     <div class="container">
       <header id="top">
-        <h1 class="title">Critics at Large</h1>
+        <h1 class="page-title">CRITICS AT LARGE</h1>
         <img
           src="https://www.newyorker.com/verso/static/the-new-yorker/assets/logo-header.svg"
           alt="New Yorker logo"
+          width="150"
         />
       </header>
 
       <section id="about">
-        <h2 class="title">
-          About the Podcast
+        <h2 class="section-title">
+          ABOUT THE PODCAST
           <span class="material-symbols-outlined">podcasts</span>
         </h2>
         <p>
@@ -287,20 +459,30 @@
       </section>
 
       <section id="hosts">
-        <h2 class="title">
-          Meet the Hosts <span class="material-symbols-outlined"> mic </span>
+        <h2 class="section-title">
+          MEET THE HOSTS <span class="material-symbols-outlined"> mic </span>
         </h2>
 
-        <div class="host-profile">
+        <div
+          class="host-profile"
+          tabindex="0"
+          role="button"
+          aria-label="Toggle biography of Vinson Cunningham"
+        >
           <img
             src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/150/248/original/cunningham-vinson.png?1731522179"
             alt="Vinson Cunningham"
           />
-          <h3 class="title">
-            Vinson Cunningham
-            <span class="material-symbols-outlined arrow">arrow_drop_down</span>
+          <h3 class="host-title">
+            <span class="first-name">Vinson</span>
+            <span class="last-name">
+              Cunningham
+              <span class="material-symbols-outlined arrow"
+                >arrow_drop_down</span
+              >
+            </span>
           </h3>
-          <p id="bioVinson">
+          <p class="bio">
             Vinson Cunningham has been a staff writer at The New Yorker since
             2016 and became a critic for the magazine in 2018, covering theater,
             television, and broader cultural topics. A celebrated writer, he was
@@ -314,16 +496,26 @@
           </p>
         </div>
 
-        <div class="host-profile">
+        <div
+          class="host-profile"
+          tabindex="0"
+          role="button"
+          aria-label="Toggle biography of Naomi Fry"
+        >
           <img
             src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/150/247/original/naomi-fry-avitar.png?1731522129"
             alt="Naomi Fry"
           />
-          <h3 class="title">
-            Naomi Fry
-            <span class="material-symbols-outlined arrow">arrow_drop_down</span>
+          <h3 class="host-title">
+            <span class="first-name">Naomi</span>
+            <span class="last-name">
+              Fry
+              <span class="material-symbols-outlined arrow"
+                >arrow_drop_down</span
+              >
+            </span>
           </h3>
-          <p id="bioNaomi">
+          <p class="bio">
             Naomi Fry has been a staff writer at The New Yorker since 2018 and
             is a frequent contributor to the weekly Critic's Notebook column.
             Her writing, which often explores themes in popular culture,
@@ -336,16 +528,27 @@
           </p>
         </div>
 
-        <div class="host-profile">
+        <div
+          class="host-profile"
+          tabindex="0"
+          role="button"
+          aria-label="Toggle biography of Alexandra Schwartz"
+        >
           <img
             src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/150/249/original/schwartz-alexandra.png?1731522280"
             alt="Alexandra Schwartz"
           />
-          <h3 class="title">
-            Alexandra Schwartz
-            <span class="material-symbols-outlined arrow">arrow_drop_down</span>
+          <h3 class="host-title">
+            <span class="first-name">Alexandra</span>
+            <span class="last-name">
+              Schwartz
+              <span class="material-symbols-outlined arrow"
+                >arrow_drop_down</span
+              >
+            </span>
           </h3>
-          <p id="bioAlexandra">
+
+          <p class="bio">
             Alexandra Schwartz joined The New Yorker as part of the editorial
             team in 2013 and became a staff writer in 2016. Known for her
             insightful and compelling coverage, she has profiled celebrated
@@ -360,17 +563,29 @@
         </div>
       </section>
 
-      <section id="episodes">
-        <h2 class="title">
-          Episode Highlights
+      <section id="episodes" class="no-border">
+        <h2 class="section-title">
+          EPISODE HIGHLIGHTS
           <span class="material-symbols-outlined"> highlight </span>
         </h2>
+
         <div class="episode-card">
-          <img
-            src="https://media.newyorker.com/photos/6516930907084e4e24f0b0cf/1:1/w_1600,c_limit/CAL-TILE2.png"
-            alt="Episode Two"
-          />
-          <h3 class="title">Midlife Crisis</h3>
+          <a
+            href="https://www.newyorker.com/podcast/critics-at-large/the-new-midlife-crisis"
+            target="_blank"
+          >
+            <img
+              src="https://media.newyorker.com/photos/6516930907084e4e24f0b0cf/1:1/w_1600,c_limit/CAL-TILE2.png"
+              alt="Episode Two"
+            />
+          </a>
+          <h3 class="episode-title">
+            <a
+              href="https://www.newyorker.com/podcast/critics-at-large/the-new-midlife-crisis"
+              target="_blank"
+              >New Midlife Crisis</a
+            >
+          </h3>
           <p>
             The critics examine how the midlife crisis, once largely seen as a
             male experience, has evolved with societal shifts since the women's
@@ -380,12 +595,24 @@
             just the crisis of life, period. You invent it for yourself.”
           </p>
         </div>
+
         <div class="episode-card">
-          <img
-            src="https://media.newyorker.com/photos/6516930907084e4e24f0b0cf/1:1/w_1600,c_limit/CAL-TILE3.png"
-            alt="Episode Three"
-          />
-          <h3 class="title">The Therapy</h3>
+          <a
+            href="https://www.newyorker.com/podcast/critics-at-large/the-therapy-episode"
+            target="_blank"
+          >
+            <img
+              src="https://media.newyorker.com/photos/6516930907084e4e24f0b0cf/1:1/w_1600,c_limit/CAL-TILE3.png"
+              alt="Episode Three"
+            />
+          </a>
+          <h3 class="title">
+            <a
+              href="https://www.newyorker.com/podcast/critics-at-large/the-therapy-episode"
+              target="_blank"
+              >The Therapy</a
+            >
+          </h3>
           <p>
             In this episode, the critics explore portrayals of therapy, from
             Woody Allen's works and The Sopranos to newer representations in
@@ -395,18 +622,58 @@
             broader audience. But is the therapy boom making us better?
           </p>
         </div>
+
         <div class="episode-card">
-          <img
-            src="https://media.newyorker.com/photos/6516930907084e4e24f0b0cf/1:1/w_1600,c_limit/CAL-TILE.png"
-            alt="The Substance"
-          />
-          <h3 class="title">The Substance</h3>
+          <a
+            href="https://www.newyorker.com/podcast/critics-at-large/alice-munros-fall-from-grace"
+            target="_blank"
+          >
+            <img
+              src="https://media.newyorker.com/photos/6516930907084e4e24f0b0cf/1:1/w_1600,c_limit/CAL-TILE3.png"
+              alt="Episode Three"
+            />
+          </a>
+          <h3 class="title">
+            <a
+              href="https://www.newyorker.com/podcast/critics-at-large/alice-munros-fall-from-grace"
+              target="_blank"
+              >Alice Munro's Fall</a
+            >
+          </h3>
+          <p>
+            The critics discuss how we respond when beloved artists are
+            associated with unforgivable actions. Have the years since the
+            #MeToo movement given us more nuanced ways to handle these
+            situations beyond outright cancellation? “It's more a feeling of,
+            Maybe I don't want to discard the work entirely—but I do need to
+            grapple with it", Schwartz reflects.
+          </p>
+        </div>
+
+        <div class="episode-card">
+          <a
+            href="https://www.newyorker.com/podcast/critics-at-large/the-substance-and-the-new-horror-of-the-modified-body"
+            target="_blank"
+          >
+            <img
+              src="https://media.newyorker.com/photos/6516930907084e4e24f0b0cf/1:1/w_1600,c_limit/CAL-TILE.png"
+              alt="The Substance"
+            />
+          </a>
+          <h3 class="title">
+            <a
+              href="https://www.newyorker.com/podcast/critics-at-large/the-substance-and-the-new-horror-of-the-modified-body"
+              target="_blank"
+              >The Substance</a
+            >
+          </h3>
           <p>
             The critics discuss Coralie Fargeat's film theme whereas delving
             into society's obsession with physical form. “We are embodied. It is
             a struggle. It is beautiful. It's something to wrestle with forever.
             Just as you think that you've caught up to your current embodiment,
-            something changes,” Schwartz says.
+            something changes,” Schwartz says. “And so how do we make our peace
+            with it?”
           </p>
         </div>
       </section>
@@ -416,40 +683,41 @@
           href="https://www.newyorker.com/podcast/critics-at-large"
           target="_blank"
           class="btn-listen"
-          >Listen Now <span class="material-symbols-outlined">headphones</span>
+          aria-label="Listen to the podcast now"
+          >LISTEN NOW <span class="material-symbols-outlined">headphones</span>
         </a>
-        <button id="backToTop" style="display: none">
-          Back to Top
+
+        <button
+          id="backToTop"
+          class="btn-back-to-top"
+          aria-label="Back to top of page"
+        >
+          BACK TO TOP
           <span class="material-symbols-outlined">arrow_upward</span>
         </button>
       </section>
     </div>
 
     <script>
-      function toggleBio(bioId) {
-        const bio = document.getElementById(bioId);
-        bio.classList.toggle("show");
+      function toggleBio(bioElement) {
+        bioElement.classList.toggle("show");
       }
 
-      document
-        .querySelectorAll(".host-profile img, .host-profile h3")
-        .forEach((element) => {
-          element.addEventListener("click", function () {
-            const bioId = this.parentElement
-              .querySelector("p")
-              .getAttribute("id");
-            toggleBio(bioId);
-          });
+      document.querySelectorAll(".host-profile").forEach((profile) => {
+        profile.addEventListener("click", function () {
+          const bio = this.querySelector(".bio");
+          if (bio) {
+            toggleBio(bio);
+          }
         });
+      });
 
-      window.onscroll = function () {
-        const backToTopButton = document.getElementById("backToTop");
-        if (document.documentElement.scrollTop > 300) {
-          backToTopButton.style.display = "block";
-        } else {
-          backToTopButton.style.display = "none";
-        }
-      };
+      window.addEventListener("scroll", () => {
+        requestAnimationFrame(() => {
+          const backToTopButton = document.getElementById("backToTop");
+          backToTopButton.classList.toggle("show", window.scrollY > 300);
+        });
+      });
 
       document.getElementById("backToTop").onclick = function () {
         window.scrollTo({ top: 0, behavior: "smooth" });
