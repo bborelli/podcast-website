@@ -91,11 +91,10 @@
       }
 
       nav .container {
-        max-width: 800px;
-        margin: 0 auto;
         display: flex;
-        justify-content: space-evenly;
-        gap: 15px;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
       }
 
       nav a {
@@ -334,11 +333,6 @@
         transform: scale(1.08);
       }
 
-      #menu {
-        display: flex;
-        gap: 15px;
-      }
-
       #about p {
         line-height: 1.8;
       }
@@ -349,6 +343,12 @@
         background: none;
         border: none;
         cursor: pointer;
+        z-index: 1100;
+      }
+
+      #menu {
+        display: flex;
+        gap: 15px;
       }
 
       @media (max-width: 768px) {
@@ -392,20 +392,40 @@
 
         #menu-toggle {
           display: block;
+          position: fixed;
+          top: 15px;
+          right: 20px;
+          z-index: 1100;
+          color: black;
         }
 
         #menu {
           display: none;
           flex-direction: column;
-          gap: 10px;
+          align-items: center;
+          gap: 15px;
+          position: fixed;
+          top: 50px;
+          right: 0;
           background-color: #f9c647;
           width: 100%;
-          padding: 10px 0;
-          text-align: center;
+          padding: 20px 0;
+          z-index: 1000;
         }
 
         #menu.active {
           display: flex;
+        }
+
+        .nav-container {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .left-image {
+          position: relative;
+          transform: none;
+          margin-top: 60px;
         }
 
         .host-profile img {
