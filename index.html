@@ -358,6 +358,15 @@
       }
 
       @media (max-width: 768px) {
+        #episodes {
+          grid-template-columns: 1fr;
+        }
+
+        nav .container {
+          flex-direction: column;
+          text-align: center;
+        }
+
         body {
           padding-top: 30px;
         }
@@ -368,18 +377,13 @@
           margin: 20px auto;
         }
 
-        nav .container {
-          flex-direction: column;
-          gap: 10px;
-          align-items: center;
-        }
-
         h1 {
           font-size: 1.8rem;
         }
 
         h2 {
           font-size: 1.5rem;
+          margin-top: 20px;
         }
 
         p {
@@ -435,18 +439,15 @@
         }
 
         .section-title {
-          font-size: 1.2rem;
-          padding: 5px 0;
+          font-size: 1.5rem;
+          padding: 10px 0;
+          margin-bottom: 20px;
         }
 
         .episode-card {
           width: 100%;
           margin: 10px 0;
-        }
-
-        #episodes {
-          grid-template-columns: 1fr;
-          gap: 20px;
+          padding: 15px;
         }
 
         .host-profile {
