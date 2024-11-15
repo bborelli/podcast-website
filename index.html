@@ -445,9 +445,17 @@
           height: auto;
         }
 
+        #episodes {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 20px;
+          justify-items: stretch;
+        }
+
         .episode-card {
-          max-width: 100%;
-          margin: 15px 0;
+          width: 100%;
+          max-width: none;
+          margin: 0 auto;
         }
       }
 
@@ -808,12 +816,14 @@
         window.scrollTo({ top: 0, behavior: "smooth" });
       };
 
-      document
-        .getElementById("menu-toggle")
-        .addEventListener("click", function () {
-          const menu = document.getElementById("menu");
+      document.addEventListener("DOMContentLoaded", function () {
+        const menuToggle = document.getElementById("menu-toggle");
+        const menu = document.getElementById("menu");
+
+        menuToggle.addEventListener("click", function () {
           menu.classList.toggle("active");
         });
+      });
     </script>
   </body>
 </html>
