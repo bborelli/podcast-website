@@ -212,13 +212,6 @@
         vertical-align: middle;
       }
 
-      .host-profile {
-        max-width: 200px;
-        text-align: center;
-        margin: 15px;
-        cursor: pointer;
-      }
-
       .first-name {
         display: block;
         font-weight: normal;
@@ -228,6 +221,21 @@
         display: block;
         font-weight: bold;
         margin-top: 4px;
+      }
+
+      .host-profile {
+        max-width: 200px;
+        text-align: center;
+        margin: 15px;
+        cursor: pointer;
+      }
+
+      .host-profile img {
+        width: 200px;
+        height: 200px;
+        border-radius: 4px;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 12px;
+        cursor: pointer;
       }
 
       .host-profile p {
@@ -242,14 +250,6 @@
         opacity: 1;
       }
 
-      .host-profile img {
-        width: 200px;
-        height: 200px;
-        border-radius: 4px;
-        box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 12px;
-        cursor: pointer;
-      }
-
       .material-symbols-outlined.arrow {
         font-size: 1rem;
         vertical-align: middle;
@@ -257,17 +257,30 @@
         cursor: pointer;
       }
 
+      #hosts {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        justify-items: center;
+        padding-top: 20px;
+      }
+
       .episode-card {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        max-width: 100px;
+        max-width: 100%;
         margin: 15px auto;
         background-color: #fff;
         border-radius: 4px;
         box-shadow: rgba(0, 0, 0, 0.5) 0px 4px 12px;
         padding: 20px;
         text-align: left;
+      }
+
+      #episodes {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        justify-items: center;
+        padding-top: 20px;
       }
 
       .episode-card img {
@@ -288,23 +301,8 @@
         color: black;
       }
 
-      #episodes {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-        justify-items: center;
-      }
-
-      #hosts {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
-        justify-items: center;
-        padding-top: 20px;
-      }
-
       .section-title {
-        grid-column: span 3; /* Manter essa regra específica para alinhar corretamente o título dos hosts */
+        grid-column: span 3;
         margin-bottom: 10px;
         text-align: center;
       }
@@ -435,6 +433,12 @@
           padding-top: 20px;
         }
 
+        #episodes {
+          grid-template-columns: 1fr;
+          gap: 20px;
+          justify-items: center;
+        }
+
         .host-profile {
           width: 100%;
           margin: 15px auto;
@@ -445,17 +449,9 @@
           height: auto;
         }
 
-        #episodes {
-          display: grid;
-          grid-template-columns: 1fr;
-          gap: 20px;
-          justify-items: stretch;
-        }
-
         .episode-card {
           width: 100%;
-          max-width: none;
-          margin: 0 auto;
+          margin: 15px 0;
         }
       }
 
@@ -822,6 +818,15 @@
 
         menuToggle.addEventListener("click", function () {
           menu.classList.toggle("active");
+        });
+
+        document.addEventListener("click", function (event) {
+          if (
+            !menu.contains(event.target) &&
+            !menuToggle.contains(event.target)
+          ) {
+            menu.classList.remove("active");
+          }
         });
       });
     </script>
