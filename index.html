@@ -69,7 +69,6 @@
         text-align: center;
         padding-top: 15px;
         padding-bottom: 40px;
-        text-align: center;
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
       }
 
@@ -159,17 +158,33 @@
         margin-top: 40px;
       }
 
+      .header-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 130px;
+      }
+
+      .image-wrapper {
+        flex-shrink: 0;
+      }
+
       .left-image {
-        position: absolute;
-        left: 0;
-        bottom: 20%;
-        transform: translateY(-325%) translateX(90%);
+        width: 150px;
+      }
+
+      .text-wrapper {
+        text-align: center;
       }
 
       .page-title {
+        font-size: 2rem;
         margin: 0;
-        font-size: 1.8rem;
-        text-align: center;
+      }
+
+      .logo {
+        display: block;
+        margin: 10px auto 0;
       }
 
       .btn-listen {
@@ -288,16 +303,9 @@
         padding-top: 20px;
       }
 
-      #hosts .section-title {
-        grid-column: span 3;
+      .section-title {
+        grid-column: span 3; /* Manter essa regra específica para alinhar corretamente o título dos hosts */
         margin-bottom: 10px;
-        text-align: center;
-      }
-
-      #hosts .host-profile {
-        display: inline-block;
-        width: 200px;
-        margin: 15px;
         text-align: center;
       }
 
@@ -382,14 +390,6 @@
           margin-bottom: 15px;
         }
 
-        .left-image {
-          position: static;
-          transform: none;
-          width: 40%;
-          margin: 20px auto;
-          display: block;
-        }
-
         #menu-toggle {
           display: block;
           position: fixed;
@@ -425,7 +425,19 @@
         .left-image {
           position: relative;
           transform: none;
-          margin-top: 60px;
+          margin-top: 100px;
+        }
+
+        #hosts {
+          grid-template-columns: 1fr;
+          gap: 20px;
+          justify-items: center;
+          padding-top: 20px;
+        }
+
+        .host-profile {
+          width: 100%;
+          margin: 15px auto;
         }
 
         .host-profile img {
@@ -439,43 +451,25 @@
         }
       }
 
-      #hosts {
-        grid-template-columns: 1fr;
-      }
-
-      #episodes {
-        grid-template-columns: 1fr;
-      }
-
-      .host-profile {
-        width: 100%;
-        margin: 15px 0;
-      }
-
       @media (min-width: 769px) {
-        .episode-card {
-          max-width: 300px;
-          margin: 15px;
-        }
-
         #episodes {
           display: flex;
           flex-wrap: wrap;
           justify-content: center;
         }
 
+        .episode-card {
+          max-width: 300px;
+          margin: 15px;
+        }
+
         #hosts {
-          display: grid;
           grid-template-columns: repeat(3, 1fr);
           gap: 20px;
         }
 
         .host-profile {
           width: 100%;
-        }
-
-        #hosts {
-          grid-template-columns: repeat(3, 1fr);
         }
       }
     </style>
@@ -494,18 +488,22 @@
 
     <div class="container">
       <header id="top">
-        <img
-          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/150/386/original/the-new-yorker-subscription-business-model-magazine-newsletter-fiction-png-favpng-1hzegr8eBm9vU0358UYp7GUgZ-removebg-preview.png?1731617446"
-          alt="New Yorker icon"
-          class="left-image"
-          width="20%"
-        />
-        <div class="wrapper">
-          <h1 class="page-title">CRITICS AT LARGE</h1>
-          <img
-            src="https://www.newyorker.com/verso/static/the-new-yorker/assets/logo-header.svg"
-            alt="New Yorker logo"
-          />
+        <div class="header-content">
+          <div class="image-wrapper">
+            <img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/150/386/original/the-new-yorker-subscription-business-model-magazine-newsletter-fiction-png-favpng-1hzegr8eBm9vU0358UYp7GUgZ-removebg-preview.png?1731617446"
+              alt="New Yorker icon"
+              class="left-image"
+            />
+          </div>
+          <div class="text-wrapper">
+            <h1 class="page-title">CRITICS AT LARGE</h1>
+            <img
+              src="https://www.newyorker.com/verso/static/the-new-yorker/assets/logo-header.svg"
+              alt="New Yorker logo"
+              class="logo"
+            />
+          </div>
         </div>
       </header>
 
